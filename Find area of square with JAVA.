@@ -1,0 +1,13 @@
+//Area of SQUARE.
+import java.util.Scanner;
+class Area_OfSquare {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int side;
+        int area;
+        System.out.println("Side of the Square");
+        side = sc.nextInt();
+        area = side*side;
+        System.out.printf("Area of square %d",side*side);
+    }
+}
