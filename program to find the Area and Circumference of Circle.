@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class MyClass {
+    public static void main(String args[]) { 
+      double r,a,c;
+      Scanner sc  =  new Scanner(System.in);
+      System.out.println("Enter the value of r: ");
+      r=sc.nextDouble();
+      a=Math.PI*r*r;
+      c=2*Math.PI*r;
+      System.out.println("Area of circle="+a);
+      System.out.printf("Circumference of circle is ="+c);
+    }
+}
