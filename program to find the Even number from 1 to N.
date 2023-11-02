@@ -1,0 +1,12 @@
+import java.util.Scanner;
+class Even {
+    public static void main(String[] args) {
+        int i,n;
+        System.out.println("Enter the Term: ");
+        Scanner sc = new Scanner(System.in);
+        n=sc.nextInt();
+        for(i=2;i<=n;i=i+2) {
+                System.out.println("n= "+i);
+        }
+    }
+}
