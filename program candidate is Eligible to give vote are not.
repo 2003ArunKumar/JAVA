@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class vote {
+    public static void main(String[] args) {
+        System.out.println("Enter the age:");
+        Scanner r = new Scanner(System.in);
+        int age = r.nextInt();
+        if(age>=18) {
+            System.out.println("Give vote.");
+        }
+        else if(age<18 && age>10) {
+            System.out.println("teenager");
+        }
+        else{
+            System.out.println("Not give vote.");
+        }
+    }
+}
