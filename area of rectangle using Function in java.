@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Function{
+    public static int calculateArea (int a, int b){
+        int Area = a * b;
+        return Area;
+    }
+    public static void main(String[]args){
+        System.out.println("Enter the two sides: ");
+        Scanner sc = new Scanner (System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int Area = calculateArea(a,b);
+        System.out.print("Area of rectangle is : "+Area);
+    }
+}
