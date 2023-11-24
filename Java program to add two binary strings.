@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class AddBinaryStrings {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the two binary strings from the user
+        System.out.println("Enter the first binary string: ");
+        String binary1 = scanner.nextLine();
+
+        System.out.println("Enter the second binary string: ");
+        String binary2 = scanner.nextLine();
+
+        // Add the two binary strings
+        String sum = addBinaryStrings(binary1, binary2);
+
+        // Print the sum
+        System.out.println("The sum of the two binary strings is: " + sum);
+    }
+
+    public static String addBinaryStrings(String binary1, String binary2) {
+        // Reverse the two strings
+        String reversedBinary1 = new StringBuilder(binary1).reverse().toString();
+        String reversedBinary2 = new StringBuilder(binary2).reverse().toString();
+
+        // Create a string to store the sum
+        String sum = "";
+
+        // Initialize the carry to 0
+        int carry = 0;
+
+        // Iterate over the two strings, starting from the least significant digit
+        for (int i = 0; i < reversedBinary1.length(); i++) {
+            // Get the digits at the current position
+            int digit1 = Character.getNumericValue(reversedBinary1.charAt(i));
+            int digit2 = Character.getNumericValue(reversedBinary2.charAt(i));
+
+            // Add the digits and the carry
+            int sumDigit = digit1 + digit2 + carry;
+
+            // If the sum is greater than or equal to 2, set the carry to 1 and the sum digit to 0
+            if (sumDigit >= 2) {
+                carry = 1;
+                sumDigit -= 2;
+            } else {
+                carry = 0;
+            }
+
+            // Append the sum digit to the sum string
+            sum += sumDigit;
+        }
+
+        // If there is a carry left over, append it to the sum string
+        if (carry == 1) {
+            sum += carry;
+        }
+
+        // Reverse the sum string
+        return new StringBuilder(sum).reverse().toString();
+    }
+}
